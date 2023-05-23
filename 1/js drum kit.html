@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="style.css">
+        <title>JS Drum Kit</title>
+    </head>
+    <body>
+        <main>
+            <h1 class="main-title">JavaScript Drum Kit</h1>
+              <div class="keys">
+                <div data-key="74" class="key">
+                    <kbd>J</kbd>
+                    <span class="sound">Snare</span>
+                </div>
+                <div data-key="66" class="key">
+                    <kbd>B</kbd>
+                    <span class="sound">Kick</span>
+                </div>
+                <div data-key="86" class="key">
+                    <kbd>V</kbd>
+                    <span class="sound">Kick2</span>
+                </div>
+                <div data-key="72" class="key">
+                    <kbd>H</kbd>
+                    <span class="sound">High tom</span>
+                </div>
+                <div data-key="71" class="key">
+                    <kbd>G</kbd>
+                    <span class="sound">Mid tom</span>
+                  </div>
+                  <div data-key="70" class="key">
+                    <kbd>F</kbd>
+                    <span class="sound">Floor tom</span>
+                  </div>
+                <div data-key="69" class="key">
+                    <kbd>E</kbd>
+                    <span class="sound">Crash</span>
+                </div>
+                <div data-key="82" class="key">
+                    <kbd>R</kbd>
+                    <span class="sound">Ride</span>
+                </div>
+                <div data-key="73" class="key">
+                    <kbd>I</kbd>
+                    <span class="sound">Hi-Hat Open</span>
+                </div>
+                <div data-key="75" class="key">
+                    <kbd>K</kbd>
+                    <span class="sound">Hi-Hat Closed</span>
+                </div>
+              </div>
+          </main>
+          <audio data-key="74" src="snare.wav"></audio>
+          <audio data-key="66" src="kick.wav"></audio>
+          <audio data-key="86" src="kick2.wav"></audio>
+          <audio data-key="72" src="tom-high.wav"></audio>
+          <audio data-key="71" src="tom-mid.wav"></audio>
+          <audio data-key="70" src="tom-low.wav"></audio>
+          <audio data-key="69" src="crash.wav"></audio>
+          <audio data-key="82" src="ride.wav"></audio>
+          <audio data-key="73" src="hihat-open.wav"></audio>
+          <audio data-key="75" src="hihat-close.wav"></audio>
+    <script>
+      function playSound(e) {
+        const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        if (!audio) return; 
+        audio.currentTime = 0;
+        audio.play();
+        if (!key) return;
+        key.classList.add('playing');
+      }
+
+      function removePlaying(e) {
+        const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+        if (!key) return;
+        if (key.classList.contains('playing')) key.classList.remove('playing');
+      }
+    
+      window.addEventListener('keydown', playSound);
+      window.addEventListener('keyup', removePlaying); 
+    </script>      
+    </body>
+
+</html>

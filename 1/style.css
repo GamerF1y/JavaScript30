@@ -1,0 +1,34 @@
+body {
+    background: url(drumKit.jpg) no-repeat;
+    background-size: cover;
+}
+
+main h1 {
+    text-align: center;
+}
+
+.key {
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: 5rem;
+    margin-top: 25rem;
+    width: 10rem;
+    height: 10rem;
+    border: 0.2rem solid black;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 102, 0);
+    text-align: center;
+    line-height: 10rem;
+    transition: all 0.07s;
+}
+
+.key kbd {
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+}
+
+.playing {
+    transform: scale(1,1);
+    border-color: rgb(251, 255, 0);
+    box-shadow: 0 0 1.5rem rgb(251, 255, 0);
+}
