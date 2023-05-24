@@ -1,0 +1,50 @@
+body {
+    background: url(bg-image.jpg) no-repeat;
+    background-size: cover;
+}
+
+.clock {
+  width: 40rem;
+  height: 40rem;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 12rem;
+  border: 1rem solid rgba(255, 255, 255, 0.685);
+  border-radius: 100%;
+}
+
+p {
+    position: absolute;
+    width: max-content;
+    top: 25rem;
+    left: 50rem;
+    font-size: 4rem;
+}
+
+.hand {
+  position: absolute;
+  height: 0.5rem;
+  top: 20rem;
+}
+
+.hourHand {
+  background-color: black;  
+  width: 13rem; 
+  left: 6rem;
+  transform-origin: 100%;
+}
+
+.miniteHand {
+  background-color: rgba(0, 0, 0, 0.548);  
+  width: 16rem;  
+  left: 3rem;
+  transform-origin: 100%;
+}
+
+.secondHand {
+  background-color: rgba(250, 101, 101, 0.589); 
+  width: 18rem;
+  transform-origin: 100%;
+  left: 1rem;
+}

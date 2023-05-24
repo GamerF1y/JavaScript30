@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="style.css">
+        <title>JS Clock</title>
+    </head>
+    <body>
+      <div class="clock">
+        <p></p>
+        <div class="hand hourHand"></div>
+        <div class="hand miniteHand"></div>
+        <div class="hand secondHand"></div>
+      </div>
+    <script>
+      function setDate() {
+        const time = new Date();
+
+        const secondHand = document.querySelector('.secondHand'); //秒针
+        const miniteHand = document.querySelector('.miniteHand'); //分针
+        const hourHand = document.querySelector('.hourHand'); //时针
+        const now = document.querySelector('p'); //数字显示
+        /*
+        getMonth() 0为1月 所以要 +1
+        getUTCDate() 获取一个月中的第几天
+        */
+        now.innerHTML = '';
+        now.innerHTML = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getUTCDate()}-${time.getHours()}-${time.getMinutes()}-${time.getSeconds()}`;
+        /*
+        时针 分针 秒针 初始指向9 故角度都要 +90
+        时针一小时转 30 deg
+        分针一分钟转 6 deg
+        秒针一秒种转 6 deg
+        */
+        let secondDeg = time.getSeconds() * 6 + 90;
+        let miniteDeg = time.getMinutes() * 6 + 90;
+        let hourDeg = time.getHours() * 30 + 90;
+        secondHand.style.transform = `rotate(${secondDeg}deg)`;
+        miniteHand.style.transform = `rotate(${miniteDeg}deg)`;
+        hourHand.style.transform = `rotate(${hourDeg}deg)`;
+      }
+      //每隔1000毫秒 执行一次setDate函数
+      setInterval(setDate, 1000);
+    </script>      
+    </body>
+
+</html>
