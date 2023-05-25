@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="style.css">
+        <title>Update CSS Variables with JS</title>
+    </head>
+    <body>
+      <h2>Update CSS Variables with <span class="h2">JS</span></h2>
+      <div>
+        <div class="control">
+          <label for="spacing">Spacing:</label>
+          <input type="range" min="0" max="50" step="1" id="spacing">
+          <label for="blur">Blur:</label>
+          <input type="range" min="0" max="3" step="0.1" id="blur">
+          <label for="color">Color:</label>
+          <input type="color" id="color">
+          <label for="file">Slect Image:</label>
+          <input type="file" id="file" accept="image/png, image/jpeg">
+        </div>
+        <img src="city.jpg" alt="天空中拍摄城市的照片">
+      </div>
+    <script>
+      const spacing = document.querySelector('#spacing');
+      const blur = document.querySelector('#blur');
+      const color = document.querySelector('#color');
+      const img = document.querySelector('img');
+      const file = document.querySelector('#file');
+
+      spacing.addEventListener('input', (e) => {
+        img.style.padding = `${e.target.value}px`;
+      });
+      
+      blur.addEventListener('input', (e) => {
+        img.style.filter = `blur(${e.target.value}px)`;
+      });
+
+      color.addEventListener('input', (e) => {
+        img.style.backgroundColor = `${e.target.value}`;
+      });
+
+      file.addEventListener('input', (e) => {
+        let url = URL.createObjectURL(e.target.files[0]) || webkitURL.createObjectURL(e.target.files[0]);
+        img.setAttribute('src', url);
+      });  
+    </script>      
+    </body>
+
+</html>

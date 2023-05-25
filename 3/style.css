@@ -1,0 +1,38 @@
+:root {
+  --spacing: 50px;
+  --blur: 5px;
+  --color: rgb(255, 255, 0);
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.671);
+}
+
+.h2 {
+  color: var(--color);
+}
+
+h2 {
+  margin-left: 500px;
+}
+
+.control {
+  color:orangered;
+  margin-bottom: 20px;
+}
+
+input {
+  margin-right: 20px;
+}
+
+img {
+  background-color: var(--color);
+  border-radius: 10px;
+  padding: var(--spacing);
+  width: 1600px;
+  height: 1000px;
+}
+
+a {
+  color: aliceblue;
+}
