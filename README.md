@@ -9,3 +9,9 @@ JavaScript30 code
 
 ### day2:
 时钟：运用绝对布局、旋转、Date对象、时间间隔函数setInterval。
+
+### day3:
+css：使用 :root 创建css全局变量 实现默认css样式。  
+JavaScript：
+1. 使用监听事件 input 实时监听 input元素的变化。  
+2. 2. 使用 URL.createObjectURL() || webkitURL.createObjectURL() 将上传的图片文件转换为 BLOB 预览。
