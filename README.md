@@ -18,3 +18,10 @@ JavaScript：
 
 ### day4:
 Array api
+
+### day5:
+transform: translateY(0) 保持原来的纵向位置  
+
+监听transitionend事件时 因为使用了 this.classList.toggle() 为避免多次执行  
+故 当e.propertyName.includes('grow') 执行一次this.classList.toggle()即可
+  
