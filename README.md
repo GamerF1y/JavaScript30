@@ -24,4 +24,9 @@ transform: translateY(0) 保持原来的纵向位置
 
 监听transitionend事件时 因为使用了 this.classList.toggle() 为避免多次执行  
 故 当e.propertyName.includes('grow') 执行一次this.classList.toggle()即可
-  
+
+### day6:  
+使用Fetch 发送跨域请求 fetch(url) 返回Promise对象  
+/\B(?=(\d{3})+(?!\d))/g  全局匹配 不是任意数字 而是 一个或多个 三位数 与前面 数字或字母 的分界 的位置  
+input 事件 change  是改变值后 失去焦点时 触发  
+input 事件 keyup   是按键弹起后         触发
