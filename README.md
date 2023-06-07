@@ -30,3 +30,10 @@ transform: translateY(0) 保持原来的纵向位置
 /\B(?=(\d{3})+(?!\d))/g  全局匹配 不是任意数字 而是 一个或多个 三位数 与前面 数字或字母 的分界 的位置  
 input 事件 change  是改变值后 失去焦点时 触发  
 input 事件 keyup   是按键弹起后         触发
+
+### day7:  
+Array find()     返回符合条件的第一个元素  
+Array filter()   返回一个数组 该数组包含所有符合条件的元素  
+**<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" >Array splice()</a>**   
+  **<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" >Array slice()</a>**  
+**<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">解构赋值</a>**
