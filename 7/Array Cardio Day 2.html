@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪💪</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+    // ## Array Cardio Day 2
+
+    const people = [
+      { name: 'Wes', year: 1988 },
+      { name: 'Kait', year: 1986 },
+      { name: 'Irv', year: 1970 },
+      { name: 'Lux', year: 2015 }
+    ];
+
+    const comments = [
+      { text: 'Love this!', id: 523423 },
+      { text: 'Super good', id: 823423 },
+      { text: 'You are the best', id: 2039842 },
+      { text: 'Ramen is my fav food ever', id: 123523 },
+      { text: 'Nice Nice Nice!', id: 542328 },
+      { text: 'Super1 good', id: 823423 },
+      { text: 'Super2 good', id: 823423 }
+    ];
+
+    // Some and Every Checks
+    // Array.prototype.some() // is at least one person 19 or older?
+    const someIs = people.some(p => ((new Date()).getFullYear()) - p.year >= 19);
+    console.log('至少有一个人大于等于19岁吗？：'+someIs);
+    // Array.prototype.every() // is everyone 19 or older?
+    const everyIs = people.every(p => ((new Date()).getFullYear()) - p.year >= 19)
+    console.log('每一个人都大于等于19岁吗？：'+everyIs);
+    // Array.prototype.find()
+    // Find is like filter, but instead returns just the one you are looking for
+    // find the comment with the ID of 823423
+    console.log('find the comment with the ID of 823423：');
+    const findId = comments.find(c => c.id == 823423);
+    const findId1 = comments.filter(c => c.id == 823423);
+    console.log('find 只返回符合条件的第一个');
+    console.log(findId);
+    console.log('filter 只返回所有符合条件的');
+    console.log(findId1);
+    // Array.prototype.findIndex()
+    // Find the comment with this ID
+    const commentIndex = comments.findIndex(c => c.id == 823423);
+    console.log('findIndex 返回符合条件的第一个的索引:'+commentIndex);
+    // delete the comment with the ID of 823423
+    console.log('根据索引删除对应评论后:');
+    // comments.splice(commentIndex, 1);
+    // console.log(comments);
+    newComents = [
+      ...comments.slice(0,commentIndex),
+      ...comments.slice(commentIndex + 1)
+    ];
+    
+    console.table(newComents);
+    console.log(...comments.slice(0,commentIndex));
+  </script>
+</body>
+</html>
